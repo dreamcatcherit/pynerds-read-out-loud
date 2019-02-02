@@ -14,7 +14,7 @@ def convert_pdf_to_text(pdf_name):
         pdf_name(str): The pdf file which is to be converted into text.
     
     Returns:
-        This Function does not return anything.
+        This Function returns text file name.
     
     """
 
