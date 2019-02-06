@@ -4,8 +4,6 @@ import PyPDF2
 import textract
 import click
 
-@click.command()
-@click.option("--pdf_name",prompt=True)
 
 def convert_pdf_to_text(pdf_name):
     
@@ -55,11 +53,7 @@ def text_to_audio(text_file):
       
     '''
 
-    filename,extension=os.path.splitext(text_file)
-    if (extension=='.txt'):
-        with open(text_file,'r') as f:
-            tts = gTTS(text=f.read(), lang='en')
-            tts.save(filename+".mp3")
+    with open(text_file+".txt",'r') as f:
+        tts = gTTS(text=f.read(), lang='en')
+        tts.save(text_file+".mp3")
 
-if __name__ == "__main__":
-    text_to_audio(convert_pdf_to_text())
