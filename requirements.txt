@@ -1,0 +1,5 @@
+textract==1.6.1
+PyPDF2==1.26.0
+Click==7.0
+gTTS==2.0.3
+gTTS-token==1.1.3
