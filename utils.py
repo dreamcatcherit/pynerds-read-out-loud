@@ -2,7 +2,6 @@ import os
 from gtts import gTTS
 import PyPDF2
 import textract
-import click
 
 def convert_pdf_to_text(pdf_name):
     
