@@ -2,8 +2,6 @@ import os
 from gtts import gTTS
 import PyPDF2
 import textract
-import click
-
 
 def convert_pdf_to_text(pdf_name):
     
@@ -56,4 +54,7 @@ def text_to_audio(text_file):
     with open(text_file+".txt",'r') as f:
         tts = gTTS(text=f.read(), lang='en')
         tts.save(text_file+".mp3")
+    os.remove(text_file+".txt")
 
+def convert_pdf_to_audio(pdf_name):
+    text_to_audio(convert_pdf_to_text(pdf_name))
